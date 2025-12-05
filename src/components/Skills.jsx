@@ -20,10 +20,20 @@ export default function Skills() {
           "Pandas",
           "NumPy",
           "Git",
-        ].map((s) => (
+        ].map((s, i) => (
           <div
             key={s}
-            className="bg-white rounded-xl shadow-card p-6 text-center text-lg font-medium text-neutral-700"
+            className={`rounded-xl p-6 text-center text-lg font-medium fade-in delay-${
+              i * 200
+            }`}
+            style={{
+              background: "rgba(16,22,36,0.96)",
+              borderRadius: "16px",
+              boxShadow: `0 0 24px 2px #6366f166, 0 2px 12px 0 #0008`,
+              border: `2.5px solid #6366f1`,
+              borderImage: `linear-gradient(90deg, #38bdf8, #6366f1) 1`,
+              color: "#fff",
+            }}
           >
             {s}
           </div>

@@ -8,9 +8,9 @@ const roles = [
     loc: "Plano, TX",
     border: "techgreen",
     bullets: [
-      "Developed modular UI components and backend APIs for telecom automation and monitoring.",
+      "Built scalable UI components with React.js and developed FastAPI services for telecom automation and monitoring.",
       "Enhanced frontend security and automated API monitoring/reporting using Node.js and Selenium.",
-      "Migrated legacy Vue.js modules to Vue 3, improving performance and maintainability.",
+      "Leveraged AWS Textract and NLP techniques to automate document analysis and streamline telecom workflows.",
     ],
   },
   {
@@ -57,18 +57,32 @@ export default function ExperienceCards() {
       {roles.map((r, i) => (
         <div
           key={i}
-          className={`bg-white rounded-xl shadow-card border-l-8 pl-6 pr-4 py-6 border-${r.border}`}
+          className={`rounded-xl p-6 pr-4 py-6 fade-in delay-${i * 200} ${
+            i === 0
+              ? "ring-4 ring-techgreen ring-offset-4 ring-offset-[#101624] shadow-xl"
+              : ""
+          }`}
+          style={{
+            background: i === 0 ? "rgba(16,22,36,0.96)" : "rgba(16,22,36,0.96)",
+            borderRadius: "16px",
+            boxShadow: `0 0 32px 6px ${
+              i === 0 ? "#38bdf8" : "#6366f1"
+            }cc, 0 2px 12px 0 #0008`,
+            border: `3.5px solid ${i === 0 ? "#38bdf8" : "#6366f1"}`,
+            borderImage: `linear-gradient(90deg, #38bdf8, #6366f1) 1`,
+            color: "#e0e6ed",
+          }}
         >
-          <h3 className="text-xl font-semibold">{r.title}</h3>
-          <p className="text-techblue font-semibold">{r.company}</p>
-          <p className="text-neutral-600 text-sm">
+          <h3 className="text-xl font-semibold text-white">{r.title}</h3>
+          <p className="font-semibold text-blue-300">{r.company}</p>
+          <p className="text-white text-sm">
             {r.date} · {r.loc}
           </p>
-          <ul className="mt-4 space-y-2 text-neutral-700">
+          <ul className="mt-4 space-y-2 text-white">
             {r.bullets.map((b) => (
               <li key={b} className="flex gap-2">
                 <span
-                  className={`h-2 w-2 rounded-full bg-${r.border} mt-1`}
+                  className={`h-2 w-2 rounded-full bg-blue-300 mt-1`}
                 ></span>
                 {b}
               </li>

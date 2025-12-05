@@ -11,17 +11,17 @@ export default function Navbar() {
     "contact",
   ];
   return (
-    <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b">
+    <header className="sticky top-0 z-20 bg-[#101624] backdrop-blur border-b border-techblue">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between">
-        <span className="font-semibold text-neutral-900">
+        <span className="font-semibold text-white">
           Vishal Kompella Portfolio
         </span>
-        <div className="hidden md:flex gap-6 text-sm text-neutral-600">
+        <div className="hidden md:flex gap-6 text-sm text-white">
           {links.map((l) => (
             <button
               key={l}
               onClick={() => sc(l)}
-              className="hover:text-techblue capitalize"
+              className="hover:text-techblue capitalize text-white"
             >
               {l}
             </button>
